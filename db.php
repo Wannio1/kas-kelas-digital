@@ -1,9 +1,8 @@
 <?php
-// api/db.php untuk LOCALHOST (XAMPP)
-$host = "localhost";
-$user = "root";
-$password = ""; // Kosongkan jika menggunakan XAMPP standar
-$dbname = "nama_database_anda"; // Ganti dengan nama database di phpMyAdmin
+$host = "localhossql206.infinityfree.comt";
+$user = "if0_40879866";
+$password = "ridwan241127"; 
+$dbname = "if0_40879866_db_kas_kelas_digital"; 
 
 try {
     // Gunakan mysql untuk XAMPP
