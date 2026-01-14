@@ -1,21 +1,17 @@
 <?php
-// api/db.php
-$host = getenv('DB_HOST');
-$port = getenv('DB_PORT'); // 3306
-$dbname = getenv('DB_NAME');
-$user = getenv('DB_USER');
-$password = getenv('DB_PASS');
+// api/db.php untuk LOCALHOST (XAMPP)
+$host = "localhost";
+$user = "root";
+$password = ""; // Kosongkan jika menggunakan XAMPP standar
+$dbname = "nama_database_anda"; // Ganti dengan nama database di phpMyAdmin
 
 try {
-    // GANTI pgsql: MENJADI mysql:
-    // HAPUS sslmode=require karena MySQL punya cara sendiri
-    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-    
+    // Gunakan mysql untuk XAMPP
+    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
     $pdo = new PDO($dsn, $user, $password, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 } catch (PDOException $e) {
-    die("Koneksi Filess.io Gagal: " . $e->getMessage());
+    die("Koneksi Localhost Gagal: " . $e->getMessage());
 }
 ?>
